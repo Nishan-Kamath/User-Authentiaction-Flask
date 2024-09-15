@@ -1,4 +1,4 @@
-from flask import Flask, redirect, render_template, request, flash
+from flask import Flask, redirect, render_template, request, flash,session
 import sqlite3
 import os
 import smtplib
@@ -103,7 +103,7 @@ def forgot_password():
     global logged_mail
     logged_mail = ""
     email = request.form.get('email')
-    logged_mail = email
+    session['logged_mail'] = email
     connection = sqlite3.connect('LoginData.db')
     cursor = connection.cursor()
 
@@ -179,8 +179,8 @@ def check_otp():
     otp = request.form.get('otp')
     connection = sqlite3.connect('LoginData.db')
     cursor = connection.cursor()
-
-    if logged_mail != "":
+    logged_mail = session.get('logged_mail') 
+    if logged_mail:
         ans = cursor.execute("SELECT * FROM USEROTP WHERE email=?", (logged_mail,)).fetchall()
         if len(ans) > 0 and otp == ans[0][1]:
             cursor.execute("DELETE FROM USEROTP WHERE email = ?", (logged_mail,))
