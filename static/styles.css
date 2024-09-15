@@ -1,10 +1,5 @@
-*{
-    margin: 0;
-    padding: 0;
-}
-
 body{
-    min-height: 100vh;
+    min-height: 90vh;
     justify-content: center;
     align-items: center;
     background-image: 
@@ -12,15 +7,19 @@ body{
             to bottom,
             #dcdcdc 50%,
             #e9e9e9 30%
-        )
-        ;
+        );
     font-family: sans-serif;
+}
+
+*{
+    margin: 0;
+    padding: 0;
 }
 
 main{
     background-color: #e9e9e9;
-    width: 500px;
-    height: 700px;
+    width: 400px;
+    height: 600px;
     margin-top: 10%;
     margin-left: auto;
     margin-right: auto;
@@ -34,12 +33,11 @@ main form{
     align-items: center;
     justify-content: space-between;
 }
-
 main form input{
     width: 90%;
-    border: 3px solid black;
+    border: 3px solid rgba(71, 69, 69, 0.2);
     border-radius: 15px;
-    padding: 20px;
+    padding: 15px;
     font-size: 20px;
     font-weight: bold;
     background-color: transparent;
@@ -50,41 +48,44 @@ main form input{
     margin-bottom: 20px;
 }
 
+
 main form button{
-    width: 300px;
-    height: 60px;
+    width:300px;
+    height: 50px;
     border-radius: 15px;
     align-items: center;
-    margin-left: auto;
-    margin-right: auto;
+    box-shadow: 3px 4px 5px;
+    text-align: center;
     display: block;
     margin: 0 auto;
-    text-align: center;
+    font-size: 25px;
     font-weight: bold;
-    background-color: yellowgreen;
-    margin-bottom: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgb(197, 255, 109);
+    margin-bottom: 20px;
 }
 
 main p{
     margin-top: 30px;
     font-size: 25px;
     font-weight: bold;
-    color: brown;
+    color: rgb(100, 65, 0);
     text-align: center;
     align-items: center;
 }
 
-main .showUser{
-    background-image: url('../static/userLogo.png');
-    margin-left:auto;
+main img{
+    margin-left: auto;
     margin-right: auto;
     display: flex;
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
+    background-image: url('../static/loginLogo.png');
     background-position: center;
     background-size: cover;
+    margin-top: 20px;
     border-radius: 50%;
-    margin-top: 20%;
 }
 
 main h1,h2{
@@ -92,15 +93,33 @@ main h1,h2{
     margin-top: 20%;
 }
 
-main img{
+main .showUser{
+    background-image: url('../static/userLogo.png');
     margin-left: auto;
     margin-right: auto;
     display: flex;
     width: 200px;
     height: 200px;
-    background-image: url('../static/loginLogo.png');
     background-position: center;
     background-size: cover;
-    margin-top:40px;
     border-radius: 50%;
+    margin-top: 20%;
+}
+
+main .sent{
+    color: rgb(7, 105, 0);
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 1.8rem;
+}
+
+main .warning{
+    color: red;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 1.8rem;
+}
+
+main .mt{
+    margin-top: 40px;
 }

@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles.css') }}">
+
 </head>
 <body>
     <main>
@@ -13,8 +14,9 @@
             <input type="password" name="password" placeholder="Enter password"><br>
             <button type="submit" value="login">login</button>
         </form>
-        <p>Don't have an account <br><a href="/signUp">create account</a></p>
-        <img alt="user">
+        <p>Don't have an account? <br><a href="/signUp">create account</a></p>
+        <p><a href="/forgot_page">Forgot password?</a></p>
+        <img>
     </main>
 </body>
 </html>
