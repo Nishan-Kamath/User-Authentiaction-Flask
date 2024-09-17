@@ -5,9 +5,11 @@ import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 import random
+from flask_cors import CORS
 
 app = Flask(__name__)
 app.secret_key = os.urandom(24)
+CORS(app) 
 
 @app.route('/')
 def login():
