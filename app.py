@@ -89,12 +89,11 @@ def send_email(sender_email, receiver_email, subject, body, smtp_server, smtp_po
         # Send the email
         server.sendmail(sender_email, receiver_email, msg.as_string())
         print("Email sent successfully")
+        server.quit()
         
     except Exception as e:
         print(f"Failed to send email: {e}")
     
-    finally:
-        server.quit()  # Close the connection
 
 @app.route('/forgot_page')
 def forgot_page():
@@ -105,7 +104,7 @@ def forgot_password():
     global logged_mail
     logged_mail = ""
     email = request.form.get('email')
-    session['logged_mail'] = email
+    logged_mail = email
     connection = sqlite3.connect('LoginData.db')
     cursor = connection.cursor()
 
@@ -181,7 +180,7 @@ def check_otp():
     otp = request.form.get('otp')
     connection = sqlite3.connect('LoginData.db')
     cursor = connection.cursor()
-    logged_mail = session.get('logged_mail') 
+    #logged_mail = session.get('logged_mail') 
     if logged_mail:
         ans = cursor.execute("SELECT * FROM USEROTP WHERE email=?", (logged_mail,)).fetchall()
         if len(ans) > 0 and otp == ans[0][1]:

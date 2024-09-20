@@ -10,10 +10,6 @@ cmd1 = """CREATE TABLE IF NOT EXISTS USERS(first_name varchar(50),
 
 cursor.execute(cmd1)
 
-cmd3 = """CREATE TABLE IF NOT EXISTS USEROTP(email varchar(50) primary key references USERS(email),otp varchar(6))"""
-cursor.execute(cmd3)
-
-print(cursor.execute("PRAGMA table_info(USEROTP)").fetchall())
 cmd2 = """INSERT INTO USERS(first_name, last_name, email, password) values
                 ('tester','tester','tester@gmail.com','tester')"""
 #cursor.execute(cmd2)
@@ -24,5 +20,9 @@ ans = cursor.execute("select * from USERS").fetchall()
 
 for i in ans:
     print(i)
+
+cmd = """CREATE TABLE IF NOT EXISTS USEROTP(email varchar(50) primary key references USERS(email), otp varchar(6))"""
+cursor.execute(cmd)
+connection.commit()
 
 connection.close()

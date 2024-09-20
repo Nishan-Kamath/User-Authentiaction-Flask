@@ -109,15 +109,13 @@ main .showUser{
 
 main .sent{
     color: rgb(7, 105, 0);
-    margin-top: 10px;
-    margin-bottom: 10px;
+    gap: 5px;
     font-size: 1.8rem;
 }
 
 main .warning{
     color: red;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    gap: 10px;
     font-size: 1.8rem;
 }
 
